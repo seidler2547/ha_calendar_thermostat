@@ -1,0 +1,115 @@
+{
+  "title": "Calendar Climate",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Calendar climate schedule",
+        "description": "Sets a mode and a temperature on climate entities while an event of a calendar is running, and another one when it ends. With a preheat gradient, the event settings are applied early enough for the room to be warm when the event starts.",
+        "data": {
+          "name": "Name",
+          "calendar_entity_id": "Calendar",
+          "climate_entity_ids": "Climate entities",
+          "event_hvac_mode": "Mode during an event",
+          "event_temperature": "Temperature during an event",
+          "end_hvac_mode": "Mode after an event",
+          "end_temperature": "Temperature after an event",
+          "preheat_gradient": "Preheat gradient",
+          "max_preheat": "Maximum preheat duration"
+        },
+        "data_description": {
+          "calendar_entity_id": "All the events of this calendar are followed.",
+          "climate_entity_ids": "They all get the same mode and temperature. The coldest one decides when the preheat starts.",
+          "end_hvac_mode": "'Previous state' restores the mode and the temperature each entity had before the event.",
+          "preheat_gradient": "Temperature gained by the room per hour of heating. Example: at 3°/h, a room at 15° is heated 2 hours before an event at 21°. Set to 0 to disable the preheat.",
+          "max_preheat": "The preheat never starts earlier than this before an event."
+        }
+      }
+    },
+    "error": {
+      "temperature_required": "A temperature is required for this mode."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Calendar climate schedule",
+        "data": {
+          "calendar_entity_id": "Calendar",
+          "climate_entity_ids": "Climate entities",
+          "event_hvac_mode": "Mode during an event",
+          "event_temperature": "Temperature during an event",
+          "end_hvac_mode": "Mode after an event",
+          "end_temperature": "Temperature after an event",
+          "preheat_gradient": "Preheat gradient",
+          "max_preheat": "Maximum preheat duration"
+        },
+        "data_description": {
+          "calendar_entity_id": "All the events of this calendar are followed.",
+          "climate_entity_ids": "They all get the same mode and temperature. The coldest one decides when the preheat starts.",
+          "end_hvac_mode": "'Previous state' restores the mode and the temperature each entity had before the event.",
+          "preheat_gradient": "Temperature gained by the room per hour of heating. Example: at 3°/h, a room at 15° is heated 2 hours before an event at 21°. Set to 0 to disable the preheat.",
+          "max_preheat": "The preheat never starts earlier than this before an event."
+        }
+      }
+    },
+    "error": {
+      "temperature_required": "A temperature is required for this mode."
+    }
+  },
+  "selector": {
+    "hvac_mode": {
+      "options": {
+        "off": "Off",
+        "heat": "Heat",
+        "cool": "Cool",
+        "heat_cool": "Heat/cool",
+        "auto": "Auto",
+        "dry": "Dry",
+        "fan_only": "Fan only"
+      }
+    },
+    "end_hvac_mode": {
+      "options": {
+        "off": "Off",
+        "heat": "Heat",
+        "cool": "Cool",
+        "heat_cool": "Heat/cool",
+        "auto": "Auto",
+        "dry": "Dry",
+        "fan_only": "Fan only",
+        "previous": "Previous state"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "schedule": {
+        "state": {
+          "idle": "Idle",
+          "preheat": "Preheating",
+          "event": "Event"
+        },
+        "state_attributes": {
+          "calendar_available": {
+            "name": "Calendar available"
+          },
+          "event_start": {
+            "name": "Event start"
+          },
+          "event_end": {
+            "name": "Event end"
+          },
+          "estimated_ready_time": {
+            "name": "Estimated ready time"
+          },
+          "next_event_start": {
+            "name": "Next event start"
+          },
+          "preheat_start": {
+            "name": "Preheat start"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "domain": "calendar_climate",
+  "name": "Calendar Climate",
+  "codeowners": ["@seidler2547"],
+  "config_flow": true,
+  "dependencies": ["calendar", "climate"],
+  "documentation": "https://github.com/seidler2547/ha-calendar-climate",
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/seidler2547/ha-calendar-climate/issues",
+  "version": "0.1.0"
+}

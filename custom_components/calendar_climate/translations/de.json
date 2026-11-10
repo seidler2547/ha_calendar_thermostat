@@ -1,0 +1,115 @@
+{
+  "title": "Kalender-Klima",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Kalender-Klimasteuerung",
+        "description": "Setzt Modus und Temperatur von Klima-Entitäten, während ein Termin eines Kalenders läuft, und andere Werte nach dessen Ende. Mit einem Vorheizgradienten werden die Termin-Einstellungen so früh gesetzt, dass der Raum zu Terminbeginn warm ist.",
+        "data": {
+          "name": "Name",
+          "calendar_entity_id": "Kalender",
+          "climate_entity_ids": "Klima-Entitäten",
+          "event_hvac_mode": "Modus während eines Termins",
+          "event_temperature": "Temperatur während eines Termins",
+          "end_hvac_mode": "Modus nach einem Termin",
+          "end_temperature": "Temperatur nach einem Termin",
+          "preheat_gradient": "Vorheizgradient",
+          "max_preheat": "Maximale Vorheizdauer"
+        },
+        "data_description": {
+          "calendar_entity_id": "Alle Termine dieses Kalenders werden berücksichtigt.",
+          "climate_entity_ids": "Alle erhalten denselben Modus und dieselbe Temperatur. Die kälteste bestimmt, wann das Vorheizen beginnt.",
+          "end_hvac_mode": "„Vorheriger Zustand“ stellt Modus und Temperatur wieder her, die jede Entität vor dem Termin hatte.",
+          "preheat_gradient": "Temperaturanstieg des Raums pro Heizstunde. Beispiel: Bei 3°/h wird ein Raum mit 15° zwei Stunden vor einem Termin mit 21° beheizt. 0 deaktiviert das Vorheizen.",
+          "max_preheat": "Das Vorheizen beginnt nie früher als diese Dauer vor einem Termin."
+        }
+      }
+    },
+    "error": {
+      "temperature_required": "Für diesen Modus ist eine Temperatur erforderlich."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Kalender-Klimasteuerung",
+        "data": {
+          "calendar_entity_id": "Kalender",
+          "climate_entity_ids": "Klima-Entitäten",
+          "event_hvac_mode": "Modus während eines Termins",
+          "event_temperature": "Temperatur während eines Termins",
+          "end_hvac_mode": "Modus nach einem Termin",
+          "end_temperature": "Temperatur nach einem Termin",
+          "preheat_gradient": "Vorheizgradient",
+          "max_preheat": "Maximale Vorheizdauer"
+        },
+        "data_description": {
+          "calendar_entity_id": "Alle Termine dieses Kalenders werden berücksichtigt.",
+          "climate_entity_ids": "Alle erhalten denselben Modus und dieselbe Temperatur. Die kälteste bestimmt, wann das Vorheizen beginnt.",
+          "end_hvac_mode": "„Vorheriger Zustand“ stellt Modus und Temperatur wieder her, die jede Entität vor dem Termin hatte.",
+          "preheat_gradient": "Temperaturanstieg des Raums pro Heizstunde. Beispiel: Bei 3°/h wird ein Raum mit 15° zwei Stunden vor einem Termin mit 21° beheizt. 0 deaktiviert das Vorheizen.",
+          "max_preheat": "Das Vorheizen beginnt nie früher als diese Dauer vor einem Termin."
+        }
+      }
+    },
+    "error": {
+      "temperature_required": "Für diesen Modus ist eine Temperatur erforderlich."
+    }
+  },
+  "selector": {
+    "hvac_mode": {
+      "options": {
+        "off": "Aus",
+        "heat": "Heizen",
+        "cool": "Kühlen",
+        "heat_cool": "Heizen/Kühlen",
+        "auto": "Automatik",
+        "dry": "Entfeuchten",
+        "fan_only": "Nur Lüfter"
+      }
+    },
+    "end_hvac_mode": {
+      "options": {
+        "off": "Aus",
+        "heat": "Heizen",
+        "cool": "Kühlen",
+        "heat_cool": "Heizen/Kühlen",
+        "auto": "Automatik",
+        "dry": "Entfeuchten",
+        "fan_only": "Nur Lüfter",
+        "previous": "Vorheriger Zustand"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "schedule": {
+        "state": {
+          "idle": "Inaktiv",
+          "preheat": "Vorheizen",
+          "event": "Termin"
+        },
+        "state_attributes": {
+          "calendar_available": {
+            "name": "Kalender verfügbar"
+          },
+          "event_start": {
+            "name": "Terminbeginn"
+          },
+          "event_end": {
+            "name": "Terminende"
+          },
+          "estimated_ready_time": {
+            "name": "Voraussichtlich warm um"
+          },
+          "next_event_start": {
+            "name": "Nächster Terminbeginn"
+          },
+          "preheat_start": {
+            "name": "Vorheizbeginn"
+          }
+        }
+      }
+    }
+  }
+}
