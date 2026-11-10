@@ -4,9 +4,9 @@
   "codeowners": ["@seidler2547"],
   "config_flow": true,
   "dependencies": ["calendar", "climate"],
-  "documentation": "https://github.com/seidler2547/ha-calendar-climate",
+  "documentation": "https://github.com/seidler2547/ha_calendar_thermostat",
   "integration_type": "helper",
   "iot_class": "calculated",
-  "issue_tracker": "https://github.com/seidler2547/ha-calendar-climate/issues",
+  "issue_tracker": "https://github.com/seidler2547/ha_calendar_thermostat/issues",
   "version": "0.1.0"
 }
